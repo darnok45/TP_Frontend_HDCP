@@ -10,6 +10,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
 </head>
 <body>
     <nav></nav>
@@ -19,12 +22,12 @@
         <section class="form_hdcp">
 
             <!-- Button trigger modal -->
-            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" class="btn btn_comenzar" data-bs-toggle="modal" data-bs-target="#modal_hdcp">
                 Calcular mi huella
             </button>
 
             <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="modal_hdcp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -32,20 +35,188 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn " data-bs-dismiss="modal">Close</button>
+                            <div class="swiper mySwiper">
+                                <div class="swiper-wrapper">
+                                    <!-- Inicio -->
+                                    <div class="swiper-slide">
+                                        <p>
+                                            Vamos a realizar unas breves preguntas para calcular tu huella de carbono anual.
+                                            <br>
+                                            Los resultados son una aproximación.
+                                        </p>
+                                        <div class="button-next mt-3">
+                                            <button class="btn btn_comenzar">Comenzar</button>
+                                        </div>
+
+                                        <!-- Pregunta 1 Vehiculos: Auto/Moto Si/No-->
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <p><b>Vehiculos:</b> ¿Cuenta con Auto o Moto?</p>
+
+                                        <div class="mt-6 d-grid gap-2 col-6 mx-auto">
+                                            <button class="btn btn-success" id="btnVehiculoSi">Sí</button>
+                                            <button class="btn btn-danger" id="btnVehiculoNo">No</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Pregunta 1 Vehiculos: Si -->
+                                    <div class="swiper-slide">
+                                        <p>¿Cuantos kilometros recorres en un año? (Aproximado)</p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radioDefault" id="vehiculo1">
+                                            <label class="form-check-label" for="vehiculo1">
+                                                Menos de 2000 KM
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radioDefault" id="vehiculo2">
+                                            <label class="form-check-label" for="vehiculo2">
+                                                4000 KM
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radioDefault" id="vehiculo3">
+                                            <label class="form-check-label" for="vehiculo3">
+                                                6000 KM
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radioDefault" id="vehiculo4">
+                                            <label class="form-check-label" for="vehiculo4">
+                                                8000 KM
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radioDefault" id="vehiculo5">
+                                            <label class="form-check-label" for="vehiculo5">
+                                                Más de 10000 KM
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radioDefault" id="vehiculo6">
+                                            <label class="form-check-label" for="vehiculo6">
+                                                No lo se
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Pregunta 2 Vehiculos: Colectivo Si/No -->
+                                    <div class="swiper-slide">
+                                        <p><b>Vehiculos:</b> ¿Utilizas metodos de transporte publico? (Colectivo)</p>
+
+                                        <div class="mt-6 d-grid gap-2 col-6 mx-auto">
+                                            <button class="btn btn-success" id="btnVehiculoSi">Sí</button>
+                                            <button class="btn btn-danger" id="btnVehiculoNo">No</button>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- Pregunta 2 Vehiculos: Si -->
+                                    <div class="swiper-slide">
+                                        <p>¿Cuantas veces viajas en colectivo por semana?</p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radioDefault" id="colectivo1">
+                                            <label class="form-check-label" for="colectivo1">
+                                                1 Vez
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radioDefault" id="colectivo2">
+                                            <label class="form-check-label" for="colectivo2">
+                                                2-3 Veces
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radioDefault" id="colectivo3">
+                                            <label class="form-check-label" for="colectivo3">
+                                                4-5 Veces
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radioDefault" id="colectivo4">
+                                            <label class="form-check-label" for="colectivo4">
+                                                6-7 Veces
+                                            </label>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- Pregunta 3 Alimentacion -->
+                                    <div class="swiper-slide">
+                                        <p><b>Alimentacion:</b> Aproximadamente, ¿qué porcentaje de tu dieta creés que corresponde a alimentos de origen animal?</p>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radioAlimentos" value="20" id="alimento1">
+                                            <label class="form-check-label" for="alimento1">Bajo (20%)</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radioAlimentos" value="40" id="alimento2">
+                                            <label class="form-check-label" for="alimento2">Moderado (40%)</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radioAlimentos" value="60" id="alimento3">
+                                            <label class="form-check-label" for="alimento3">Alto (60%)</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radioAlimentos" value="80" id="alimento4">
+                                            <label class="form-check-label" for="alimento4">Muy alto (80%)</label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Pregunta 4 Electricidad -->
+                                    <div class="swiper-slide">
+                                        <p><b>Electricidad:</b> ¿Cual es tu consumo anual de electricidad? (En KWh)</p>
+
+                                        <input class="form-control" id="inp_electricidad" type="text">
+
+                                        <div class="button-next mt-3">
+                                            <button class="btn btn_comenzar">Siguiente</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Pregunta 5 Gas -->
+                                    <div class="swiper-slide">
+                                        <p><b>Gas:</b> ¿Cual es tu consumo anual de gas? (En m3)</p>
+
+                                        <input class="form-control" id="inp_electricidad" type="text">
+
+                                        <div class="button-next mt-3">
+                                            <button class="btn btn_comenzar">Siguiente</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
         </section>
+
+
     </main>
     <footer></footer>
 
     <script src="main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            pagination: {
+                el: ".swiper-pagination",
+                type: "progressbar",
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+
+        document.querySelector(".button-next button").addEventListener("click", () => {
+            swiper.slideNext();
+        });
+    </script>
 </body>
 </html>

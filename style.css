@@ -12,8 +12,12 @@ main{
     display: flex;
 }
 
-main section.form_hdcp button.btn {
+main section.form_hdcp button.btn_comenzar {
     background-color: #2E7D32;
     color: white;
-    font: bold;
+}
+
+main section.form_hdcp div.swiper-slide {
+    font-size: larger;
+    margin-top: 20px;
 }
