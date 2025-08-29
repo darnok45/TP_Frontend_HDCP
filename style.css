@@ -1,0 +1,19 @@
+html {
+    height: 100vh;
+    max-width: 100vw;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main{
+    justify-content: center;
+    display: flex;
+}
+
+main section.form_hdcp button.btn {
+    background-color: #2E7D32;
+    color: white;
+    font: bold;
+}
