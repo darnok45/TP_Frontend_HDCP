@@ -22,7 +22,7 @@
         <section class="form_hdcp">
 
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn_comenzar" data-bs-toggle="modal" data-bs-target="#modal_hdcp">
+            <button type="button" class="btn btn_continuar" data-bs-toggle="modal" data-bs-target="#modal_hdcp">
                 Calcular mi huella
             </button>
 
@@ -45,7 +45,7 @@
                                             Los resultados son una aproximación.
                                         </p>
                                         <div class="button-next mt-3">
-                                            <button class="btn btn_comenzar">Comenzar</button>
+                                            <button class="btn btn_continuar">Comenzar</button>
                                         </div>
 
                                         <!-- Pregunta 1 Vehiculos: Auto/Moto Si/No-->
@@ -63,40 +63,38 @@
                                     <div class="swiper-slide">
                                         <p>¿Cuantos kilometros recorres en un año? (Aproximado)</p>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="radioDefault" id="vehiculo1">
+                                            <input class="form-check-input" type="radio" name="radioVehiculo" id="vehiculo1">
                                             <label class="form-check-label" for="vehiculo1">
-                                                Menos de 2000 KM
+                                                2000 KM o Menos
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="radioDefault" id="vehiculo2">
+                                            <input class="form-check-input" type="radio" name="radioVehiculo" id="vehiculo2">
                                             <label class="form-check-label" for="vehiculo2">
                                                 4000 KM
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="radioDefault" id="vehiculo3">
+                                            <input class="form-check-input" type="radio" name="radioVehiculo" id="vehiculo3">
                                             <label class="form-check-label" for="vehiculo3">
                                                 6000 KM
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="radioDefault" id="vehiculo4">
+                                            <input class="form-check-input" type="radio" name="radioVehiculo" id="vehiculo4">
                                             <label class="form-check-label" for="vehiculo4">
                                                 8000 KM
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="radioDefault" id="vehiculo5">
+                                            <input class="form-check-input" type="radio" name="radioVehiculo" id="vehiculo5">
                                             <label class="form-check-label" for="vehiculo5">
-                                                Más de 10000 KM
+                                                10000 KM o Más
                                             </label>
                                         </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="radioDefault" id="vehiculo6">
-                                            <label class="form-check-label" for="vehiculo6">
-                                                No lo se
-                                            </label>
+
+                                        <div class="button-next mt-3">
+                                            <button class="btn btn_continuar" id="btn_Vehiculo" disabled>Continuar</button>
                                         </div>
                                     </div>
 
@@ -105,8 +103,8 @@
                                         <p><b>Vehiculos:</b> ¿Utilizas metodos de transporte publico? (Colectivo)</p>
 
                                         <div class="mt-6 d-grid gap-2 col-6 mx-auto">
-                                            <button class="btn btn-success" id="btnVehiculoSi">Sí</button>
-                                            <button class="btn btn-danger" id="btnVehiculoNo">No</button>
+                                            <button class="btn btn-success" id="btnColectivoSi">Sí</button>
+                                            <button class="btn btn-danger" id="btnColectivoNo">No</button>
                                         </div>
                                     </div>
 
@@ -115,28 +113,32 @@
                                     <div class="swiper-slide">
                                         <p>¿Cuantas veces viajas en colectivo por semana?</p>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="radioDefault" id="colectivo1">
+                                            <input class="form-check-input" type="radio" name="radioColectivo" id="colectivo1">
                                             <label class="form-check-label" for="colectivo1">
                                                 1 Vez
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="radioDefault" id="colectivo2">
+                                            <input class="form-check-input" type="radio" name="radioColectivo" id="colectivo2">
                                             <label class="form-check-label" for="colectivo2">
                                                 2-3 Veces
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="radioDefault" id="colectivo3">
+                                            <input class="form-check-input" type="radio" name="radioColectivo" id="colectivo3">
                                             <label class="form-check-label" for="colectivo3">
                                                 4-5 Veces
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="radioDefault" id="colectivo4">
+                                            <input class="form-check-input" type="radio" name="radioColectivo" id="colectivo4">
                                             <label class="form-check-label" for="colectivo4">
                                                 6-7 Veces
                                             </label>
+                                        </div>
+
+                                        <div class="button-next mt-3">
+                                            <button class="btn btn_continuar" id="btn_Colectivo" disabled>Siguiente</button>
                                         </div>
                                     </div>
 
@@ -161,16 +163,20 @@
                                             <input class="form-check-input" type="radio" name="radioAlimentos" value="80" id="alimento4">
                                             <label class="form-check-label" for="alimento4">Muy alto (80%)</label>
                                         </div>
+
+                                        <div class="button-next mt-3">
+                                            <button class="btn btn_continuar" id="btn_Alimentacion" disabled>Siguiente</button>
+                                        </div>
                                     </div>
 
                                     <!-- Pregunta 4 Electricidad -->
                                     <div class="swiper-slide">
                                         <p><b>Electricidad:</b> ¿Cual es tu consumo anual de electricidad? (En KWh)</p>
 
-                                        <input class="form-control" id="inp_electricidad" type="text">
+                                        <input class="form-control" id="inp_electricidad" type="number">
 
                                         <div class="button-next mt-3">
-                                            <button class="btn btn_comenzar">Siguiente</button>
+                                            <button class="btn btn_continuar">Siguiente</button>
                                         </div>
                                     </div>
 
@@ -178,10 +184,10 @@
                                     <div class="swiper-slide">
                                         <p><b>Gas:</b> ¿Cual es tu consumo anual de gas? (En m3)</p>
 
-                                        <input class="form-control" id="inp_electricidad" type="text">
+                                        <input class="form-control" id="inp_electricidad" type="number">
 
                                         <div class="button-next mt-3">
-                                            <button class="btn btn_comenzar">Siguiente</button>
+                                            <button class="btn btn_continuar">Siguiente</button>
                                         </div>
                                     </div>
                                 </div>
@@ -202,20 +208,36 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+    <!-- Script para control de Swiper -->
     <script>
         var swiper = new Swiper(".mySwiper", {
             pagination: {
                 el: ".swiper-pagination",
                 type: "progressbar",
             },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
+/*             allowTouchMove: false */
         });
 
-        document.querySelector(".button-next button").addEventListener("click", () => {
+        document.querySelectorAll(".button-next button").forEach(button => {
+            button.addEventListener("click", () => {
             swiper.slideNext();
+        })
+        });
+
+        document.getElementById("btnVehiculoSi").addEventListener("click", () => {
+        swiper.slideTo(2);
+        });
+
+        document.getElementById("btnVehiculoNo").addEventListener("click", () => {
+        swiper.slideTo(3);
+        });
+
+        document.getElementById("btnColectivoSi").addEventListener("click", () => {
+        swiper.slideTo(4);
+        });
+
+        document.getElementById("btnColectivoNo").addEventListener("click", () => {
+        swiper.slideTo(5);
         });
     </script>
 </body>
