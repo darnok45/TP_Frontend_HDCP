@@ -1,0 +1,58 @@
+/* --- Sticky Footer --- */
+html, body {
+  height: 100%;
+  
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: all 1.5s ease;
+}
+.contenido {
+  flex: 1; /* ocupa el espacio para empujar el footer */
+}
+footer {
+  margin-top: auto;
+  background-color: #f8f9fa;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* --- Responsividad extra --- */
+@media (max-width: 768px) {
+  /* Footer: apila los elementos en pantallas medianas */
+  footer {
+    flex-direction: column !important;
+    text-align: center;
+  }
+  footer p,
+  footer ul {
+    margin: 0.5rem 0;
+  }
+  footer ul {
+    justify-content: center !important;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Ajuste del navbar */
+  .navbar .form-control {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  .navbar .btn {
+    width: 100%;
+  }
+
+  /* Footer más compacto en pantallas pequeñas */
+  footer {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+  footer svg {
+    width: 30px;
+    height: 24px;
+  }
+}
