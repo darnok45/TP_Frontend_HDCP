@@ -174,10 +174,10 @@
                                     <div class="swiper-slide">
                                         <p><b>Electricidad:</b> ¿Cual es tu consumo anual de electricidad? (En KWh)</p>
 
-                                        <input class="form-control" id="inp_electricidad" type="number">
+                                        <input class="form-control" id="inp_Electricidad" type="number" min="1">
 
                                         <div class="button-next mt-3">
-                                            <button class="btn btn_continuar" id="btn_Electricidad">Siguiente</button>
+                                            <button class="btn btn_continuar" id="btn_Electricidad" disabled>Siguiente</button>
                                         </div>
                                     </div>
 
@@ -188,7 +188,7 @@
                                         <input class="form-control" id="inp_Gas" type="number">
 
                                         <div class="button-next mt-3">
-                                            <button class="btn btn_continuar" id="btn_Gas">Siguiente</button>
+                                            <button class="btn btn_continuar" id="btn_Gas" disabled>Siguiente</button>
                                         </div>
                                     </div>
 
@@ -211,41 +211,8 @@
     </main>
     <footer></footer>
 
-    <script src="main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <!-- Script para control de Swiper -->
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-            pagination: {
-                el: ".swiper-pagination",
-                type: "progressbar",
-            },
-/*             allowTouchMove: false */
-        });
-
-        document.querySelectorAll(".button-next button").forEach(button => {
-            button.addEventListener("click", () => {
-            swiper.slideNext();
-        })
-        });
-
-        document.getElementById("btnVehiculoSi").addEventListener("click", () => {
-        swiper.slideTo(2);
-        });
-
-        document.getElementById("btnVehiculoNo").addEventListener("click", () => {
-        swiper.slideTo(3);
-        });
-
-        document.getElementById("btnColectivoSi").addEventListener("click", () => {
-        swiper.slideTo(4);
-        });
-
-        document.getElementById("btnColectivoNo").addEventListener("click", () => {
-        swiper.slideTo(5);
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
