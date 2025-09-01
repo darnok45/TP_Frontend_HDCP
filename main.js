@@ -1,15 +1,9 @@
-function cambiarFondo() {
-    let toggle = document.getElementById('toggle');
-    let label_toggle = document.getElementById('label_toggle');
+const themeToggle = document.getElementById('themeToggle');
 
-    if (toggle) {
-        let checked = toggle.checked;
-        document.body.classList.toggle('dark', checked);
-
-        if (checked) {
-            label_toggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
-        } else {
-            label_toggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
-        }
+themeToggle.addEventListener('change', () => {
+    if (themeToggle.checked) {
+        document.body.classList.add('dark');
+    } else {
+        document.body.classList.remove('dark');
     }
-}
+});
