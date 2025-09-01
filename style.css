@@ -21,3 +21,12 @@ main section.form_hdcp div.swiper-slide {
     font-size: larger;
     margin-top: 20px;
 }
+
+main section.form_hdcp div.swiper-slide div.resultado {
+    font-size: 50px;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    display: flex;
+    margin-top: 15%;
+}

@@ -64,31 +64,31 @@
                                     <div class="swiper-slide">
                                         <p>¿Cuantos kilometros recorres en un año? (Aproximado)</p>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="radioVehiculo" id="vehiculo1">
+                                            <input class="form-check-input" type="radio" name="radioVehiculo" id="vehiculo1" value="2000">
                                             <label class="form-check-label" for="vehiculo1">
                                                 2000 KM o Menos
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="radioVehiculo" id="vehiculo2">
+                                            <input class="form-check-input" type="radio" name="radioVehiculo" id="vehiculo2" value="4000">
                                             <label class="form-check-label" for="vehiculo2">
                                                 4000 KM
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="radioVehiculo" id="vehiculo3">
+                                            <input class="form-check-input" type="radio" name="radioVehiculo" id="vehiculo3" value="6000">
                                             <label class="form-check-label" for="vehiculo3">
                                                 6000 KM
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="radioVehiculo" id="vehiculo4">
+                                            <input class="form-check-input" type="radio" name="radioVehiculo" id="vehiculo4" value="8000">
                                             <label class="form-check-label" for="vehiculo4">
                                                 8000 KM
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="radioVehiculo" id="vehiculo5">
+                                            <input class="form-check-input" type="radio" name="radioVehiculo" id="vehiculo5" value="10000">
                                             <label class="form-check-label" for="vehiculo5">
                                                 10000 KM o Más
                                             </label>
@@ -114,25 +114,25 @@
                                     <div class="swiper-slide">
                                         <p>¿Cuantas veces viajas en colectivo por semana?</p>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="radioColectivo" id="colectivo1">
+                                            <input class="form-check-input" type="radio" name="radioColectivo" id="colectivo1" value="1">
                                             <label class="form-check-label" for="colectivo1">
                                                 1 Vez
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="radioColectivo" id="colectivo2">
+                                            <input class="form-check-input" type="radio" name="radioColectivo" id="colectivo2" value="3">
                                             <label class="form-check-label" for="colectivo2">
                                                 2-3 Veces
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="radioColectivo" id="colectivo3">
+                                            <input class="form-check-input" type="radio" name="radioColectivo" id="colectivo3" value="5">
                                             <label class="form-check-label" for="colectivo3">
                                                 4-5 Veces
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="radioColectivo" id="colectivo4">
+                                            <input class="form-check-input" type="radio" name="radioColectivo" id="colectivo4" value="7">
                                             <label class="form-check-label" for="colectivo4">
                                                 6-7 Veces
                                             </label>
@@ -177,7 +177,7 @@
                                         <input class="form-control" id="inp_electricidad" type="number">
 
                                         <div class="button-next mt-3">
-                                            <button class="btn btn_continuar">Siguiente</button>
+                                            <button class="btn btn_continuar" id="btn_Electricidad">Siguiente</button>
                                         </div>
                                     </div>
 
@@ -185,11 +185,17 @@
                                     <div class="swiper-slide">
                                         <p><b>Gas:</b> ¿Cual es tu consumo anual de gas? (En m3)</p>
 
-                                        <input class="form-control" id="inp_electricidad" type="number">
+                                        <input class="form-control" id="inp_Gas" type="number">
 
                                         <div class="button-next mt-3">
-                                            <button class="btn btn_continuar">Siguiente</button>
+                                            <button class="btn btn_continuar" id="btn_Gas">Siguiente</button>
                                         </div>
+                                    </div>
+
+                                    <!-- Resultado final: -->
+                                    <div class="swiper-slide">
+                                        <div class="text-header" id="resultado_header"></div>
+                                        <div class="resultado" id="resultado-numero"></div>
                                     </div>
                                 </div>
                                 <div class="swiper-pagination"></div>
