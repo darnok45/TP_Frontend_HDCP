@@ -30,3 +30,7 @@ main section.form_hdcp div.swiper-slide div.resultado {
     display: flex;
     margin-top: 15%;
 }
+
+:root {
+    --swiper-pagination-color: #2E7D32;
+}
