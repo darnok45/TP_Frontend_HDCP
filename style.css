@@ -1,0 +1,112 @@
+/* --- Sticky Footer --- */
+html, body {
+  height: 100%;
+  
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: all 1.5s ease;
+}
+
+nav{
+    background-color: green;
+    color: white;
+}
+img{
+  width: 60px;
+}
+
+.theme-checkbox {
+  --toggle-size: 15px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 4.25em;
+  height: 3em;
+  background: linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat;
+  background-size: 205%;
+  background-position: 0;
+  transition: 0.4s;
+  border-radius: 99em;
+  position: relative;
+  cursor: pointer;
+  font-size: var(--toggle-size);
+}
+
+.theme-checkbox::before {
+  content: "";
+  width: 2.25em;
+  height: 2.25em;
+  position: absolute;
+  top: 0.438em;
+  left: 0.438em;
+  background: linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat;
+  background-size: 205%;
+  background-position: 100%;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.theme-checkbox:checked::before {
+  left: calc(100% - 2.25em - 0.438em);
+  background-position: 0;
+}
+
+.theme-checkbox:checked {
+  background-position: 100%;
+}
+
+.dark {
+  background-color: black;
+  color: white;
+  transition: all 1.5s ease;
+}
+
+footer {
+  display: auto;
+  margin-top: auto;
+  background-color: green;
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+/* --- Responsividad extra --- */
+@media (max-width: 768px) {
+  /* Footer: apila los elementos en pantallas medianas */
+  footer {
+    flex-direction: column !important;
+    text-align: center;
+  }
+  footer p,
+  footer ul {
+    margin: 0.5rem 0;
+  }
+  footer ul {
+    justify-content: center !important;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Ajuste del navbar */
+  .navbar .form-control {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  .navbar .btn {
+    width: 100%;
+  }
+
+  /* Footer más compacto en pantallas pequeñas */
+  footer {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+  footer svg {
+    width: 30px;
+    height: 24px;
+  }
+}
