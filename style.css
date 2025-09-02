@@ -14,9 +14,14 @@ nav{
     background-color: green;
     color: white;
 }
+
 img{
   width: 60px;
 }
+.titulo{
+  font-size: 18px;
+}
+
 
 .theme-checkbox {
   --toggle-size: 15px;
@@ -112,13 +117,20 @@ footer {
 }
 
 main{
-    justify-content: center;
-    display: flex;
+  justify-content: center;
+  display: flex;
 }
 
 main section.form_hdcp button.btn_continuar {
-    background-color: #2E7D32;
-    color: white;
+  background-color: #2E7D32;
+  color: white;
+}
+
+main section.form_hdcp button.btn_volver {
+  background-color: white;
+  color: black;
+  border: 2px;
+  border-color: red;
 }
 
 main section.form_hdcp div.swiper-slide {
