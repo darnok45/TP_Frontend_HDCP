@@ -51,11 +51,10 @@ function createCard(data) {
         "duration-300"
     );
 
-    const cardContent = `
-        <img src="${data.image}" alt="${data.title}" class="rounded-t-lg w-full h-48 object-cover mb-4">
+    const cardContent = 
+        `<img src="${data.image}" alt="${data.title}" class="rounded-t-lg w-full h-48 object-cover mb-4">
         <h2 class="text-2xl font-semibold mb-2">${data.title}</h2>
-        <p>${data.description}</p>
-    `;
+        <p>${data.description}</p>`;
 
     card.innerHTML = cardContent;
 
