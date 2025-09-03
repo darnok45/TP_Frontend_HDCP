@@ -18,6 +18,10 @@ var swiper = new Swiper(".mySwiper", {
 });
 
 // Botón para iniciar
+document.querySelector(".btn_iniciar").addEventListener("click", () => {
+    swiper.slideTo(0);
+});
+
 document.querySelector(".button-next button").addEventListener("click", () => {
     swiper.slideNext();
 });
@@ -30,19 +34,19 @@ document.querySelectorAll(".button-prev button").forEach(button =>{
 
 // Botones de Si/No para vehiculos y colectivos
 document.getElementById("btnVehiculoSi").addEventListener("click", () => {
-swiper.slideTo(2);
+    swiper.slideTo(2);
 });
 
 document.getElementById("btnVehiculoNo").addEventListener("click", () => {
-swiper.slideTo(3);
+    swiper.slideTo(3);
 });
 
 document.getElementById("btnColectivoSi").addEventListener("click", () => {
-swiper.slideTo(4);
+    swiper.slideTo(4);
 });
 
 document.getElementById("btnColectivoNo").addEventListener("click", () => {
-swiper.slideTo(5);
+    swiper.slideTo(5);
 });
 
 
@@ -84,28 +88,6 @@ document.querySelectorAll('input[name="radioAlimentos"]').forEach(input => {
     });
 });
 
-const inp_Electricidad = document.getElementById("inp_Electricidad");
-const btn_Electricidad = document.getElementById("btn_Electricidad");
-
-inp_Electricidad.addEventListener("input", () => {
-    if(inp_Electricidad.value.trim() !== ""){
-        btn_Electricidad.disabled = false;
-    }else{
-        btn_Electricidad.disabled = true;
-    }
-})
-
-const inp_Gas = document.getElementById("inp_Gas");
-const btn_Gas = document.getElementById("btn_Gas");
-
-inp_Gas.addEventListener("input", () => {
-    if(inp_Gas.value.trim() !== ""){
-        btn_Gas.disabled = false;
-    }else{
-        btn_Gas.disabled = true;
-    }
-})
-
 // Toma de datos y calculos de emisión 
 document.getElementById("btn_Vehiculo").addEventListener("click", () => {
     const selected = parseInt(document.querySelector('input[name="radioVehiculo"]:checked').value);
@@ -135,7 +117,7 @@ document.getElementById("btn_Alimentacion").addEventListener("click", () => {
 });
 
 btn_Electricidad.addEventListener("click", () => {
-    const selected = parseInt(inp_Electricidad.value);
+    const selected = parseInt(inp_Electricidad.value) || 3300;
 
     if(selected<=0){
         alert("El valor debe ser mayor a 0");
@@ -147,7 +129,7 @@ btn_Electricidad.addEventListener("click", () => {
 });
 
 btn_Gas.addEventListener("click", () => {
-    const selected = parseInt(inp_Gas.value);
+    const selected = parseInt(inp_Gas.value) || 1075;
     console.log("Gas: ", selected);
 
     if(selected<=0){
@@ -176,4 +158,82 @@ btn_Gas.addEventListener("click", () => {
 
         swiper.slideNext();
     }
+});
+
+// Cards: 
+const cardData = [
+    { 
+        title: "PERSONAL", 
+        description: "Se basa en hábitos de consumo de cada persona, tiene en cuenta las emisiones de GEI asociadas a medios de transporte, uso de energía en el hogar, hábitos alimenticios y consumo de bienes.", 
+        image: "https://images.pexels.com/photos/17881972/pexels-photo-17881972.jpeg" 
+    },
+    { 
+        title: "PRODUCTO",
+        description: "Incluye las emisiones de GEI durante las etapas de extracción de materias primas, el proceso productivo, la generación de la energía necesaria, el transporte entre etapas, el uso por parte del cliente y su tratamiento como residuo.", 
+        image: "https://images.pexels.com/photos/16862261/pexels-photo-16862261.jpeg" 
+    },
+    { 
+        title: "CORPORATIVA", 
+        description: "incluye emisiones de GEI asociado a la actividad de una empresa u organización en medidas de consumo energético así como otras medidas de actuación.", 
+        image: "https://images.pexels.com/photos/459728/pexels-photo-459728.jpeg" 
+    },
+/*     { 
+        title: "Excelente Trabajo", 
+        description: "Tu huella de carbono está en un excelente promedio. Continua de esa manera", 
+        image: "https://images.pexels.com/photos/33693329/pexels-photo-33693329.jpeg" 
+    },
+    { 
+        title: "Vas por buen camino, pero se puede mejorar", 
+        description: "Tu huella de carbono es no es alta, pero tampoco es baja. El medio ambiente lo cuidamos entre todos y cada acción cuenta", 
+        image: "https://images.pexels.com/photos/33695227/pexels-photo-33695227.jpeg" 
+    },
+    { 
+        title: "Huella de Carbono Alta", 
+        description: "Tu huella de carbono está por encima del promedio. Deberias empezar a ser más conciente de tu consumo en día a día.", 
+        image: "https://images.pexels.com/photos/33626324/pexels-photo-33626324.jpeg" 
+    } */
+];
+
+const cardsContainer = document.getElementById('cards-container');
+
+
+function createCard(data) {
+    const card = document.createElement('div');
+    card.setAttribute("style", "background-color: inherit !important;");
+    card.classList.add(
+        "bg-white",
+        "dark:bg-gray-800",
+        "text-gray-800",
+        "dark:text-white",
+        "rounded-lg",
+        "shadow-lg",
+        "p-6",
+        "flex",
+        "flex-col",
+        "hover:shadow-xl",
+        "transition-shadow",
+        "duration-300",
+        "h-full"
+    );
+
+    const cardContent = 
+        `<img src="${data.image}" alt="${data.title}" class="rounded-t-lg w-full h-48 object-cover mb-4">
+        <h2 class="text-2xl font-semibold mb-2">${data.title}</h2>
+        <p>${data.description}</p>`;
+
+    card.innerHTML = cardContent;
+
+    return card;
+}
+
+cardData.forEach(data => {
+    const cardColumn = document.createElement("div");
+    
+    cardColumn.classList.add("w-full")
+
+    const newCard = createCard(data);
+
+    cardColumn.appendChild(newCard);
+    
+    cardsContainer.appendChild(cardColumn);
 });

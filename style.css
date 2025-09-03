@@ -1,8 +1,8 @@
 /* --- Sticky Footer --- */
 html, body {
   height: 100%;
-  
 }
+
 body {
   display: flex;
   flex-direction: column;
@@ -11,17 +11,13 @@ body {
 }
 
 nav{
-    background-color: green;
-    color: white;
+  background-color: green;
+  color: white;
 }
 
-img{
+nav img{
   width: 60px;
 }
-.titulo{
-  font-size: 18px;
-}
-
 
 .theme-checkbox {
   --toggle-size: 15px;
@@ -104,6 +100,9 @@ footer {
   .navbar .btn {
     width: 100%;
   }
+  .titulo{
+    font-size: 18px;
+  }
 
   /* Footer más compacto en pantallas pequeñas */
   footer {
@@ -134,19 +133,29 @@ main section.form_hdcp button.btn_volver {
 }
 
 main section.form_hdcp div.swiper-slide {
-    font-size: larger;
-    margin-top: 20px;
+  font-size: larger;
+  margin-top: 20px;
 }
 
 main section.form_hdcp div.swiper-slide div.resultado {
-    font-size: 50px;
-    align-items: center;
-    justify-content: center;
-    justify-items: center;
-    display: flex;
-    margin-top: 15%;
+  font-size: 50px;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  display: flex;
+  margin-top: 15%;
 }
 
 :root {
-    --swiper-pagination-color: #2E7D32;
+  --swiper-pagination-color: #2E7D32;
+}
+
+img{
+  width: 100%;
+  height: 100%;
+}
+
+body.dark {
+  background-color: #121212;
+  color: white;
 }
