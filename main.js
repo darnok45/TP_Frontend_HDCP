@@ -84,28 +84,6 @@ document.querySelectorAll('input[name="radioAlimentos"]').forEach(input => {
     });
 });
 
-const inp_Electricidad = document.getElementById("inp_Electricidad");
-const btn_Electricidad = document.getElementById("btn_Electricidad");
-
-inp_Electricidad.addEventListener("input", () => {
-    if(inp_Electricidad.value.trim() !== ""){
-        btn_Electricidad.disabled = false;
-    }else{
-        btn_Electricidad.disabled = true;
-    }
-})
-
-const inp_Gas = document.getElementById("inp_Gas");
-const btn_Gas = document.getElementById("btn_Gas");
-
-inp_Gas.addEventListener("input", () => {
-    if(inp_Gas.value.trim() !== ""){
-        btn_Gas.disabled = false;
-    }else{
-        btn_Gas.disabled = true;
-    }
-})
-
 // Toma de datos y calculos de emisión 
 document.getElementById("btn_Vehiculo").addEventListener("click", () => {
     const selected = parseInt(document.querySelector('input[name="radioVehiculo"]:checked').value);
@@ -135,7 +113,7 @@ document.getElementById("btn_Alimentacion").addEventListener("click", () => {
 });
 
 btn_Electricidad.addEventListener("click", () => {
-    const selected = parseInt(inp_Electricidad.value);
+    const selected = parseInt(inp_Electricidad.value) || 3300;
 
     if(selected<=0){
         alert("El valor debe ser mayor a 0");
@@ -147,7 +125,7 @@ btn_Electricidad.addEventListener("click", () => {
 });
 
 btn_Gas.addEventListener("click", () => {
-    const selected = parseInt(inp_Gas.value);
+    const selected = parseInt(inp_Gas.value) || 1075;
     console.log("Gas: ", selected);
 
     if(selected<=0){
