@@ -155,3 +155,7 @@ img{
   height: 100%;
 }
 
+body.dark {
+  background-color: #121212;
+  color: white;
+}

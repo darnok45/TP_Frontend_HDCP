@@ -199,10 +199,12 @@ const cardsContainer = document.getElementById('cards-container');
 
 function createCard(data) {
     const card = document.createElement('div');
+    card.setAttribute("style", "background-color: inherit !important;");
     card.classList.add(
         "bg-white",
         "dark:bg-gray-800",
         "text-gray-800",
+        "dark:text-white",
         "rounded-lg",
         "shadow-lg",
         "p-6",
