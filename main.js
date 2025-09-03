@@ -18,6 +18,10 @@ var swiper = new Swiper(".mySwiper", {
 });
 
 // Botón para iniciar
+document.querySelector(".btn_iniciar").addEventListener("click", () => {
+    swiper.slideTo(0);
+});
+
 document.querySelector(".button-next button").addEventListener("click", () => {
     swiper.slideNext();
 });
@@ -30,19 +34,19 @@ document.querySelectorAll(".button-prev button").forEach(button =>{
 
 // Botones de Si/No para vehiculos y colectivos
 document.getElementById("btnVehiculoSi").addEventListener("click", () => {
-swiper.slideTo(2);
+    swiper.slideTo(2);
 });
 
 document.getElementById("btnVehiculoNo").addEventListener("click", () => {
-swiper.slideTo(3);
+    swiper.slideTo(3);
 });
 
 document.getElementById("btnColectivoSi").addEventListener("click", () => {
-swiper.slideTo(4);
+    swiper.slideTo(4);
 });
 
 document.getElementById("btnColectivoNo").addEventListener("click", () => {
-swiper.slideTo(5);
+    swiper.slideTo(5);
 });
 
 
@@ -221,6 +225,13 @@ function createCard(data) {
 }
 
 cardData.forEach(data => {
+    const cardColumn = document.createElement("div");
+    
+    cardColumn.classList.add("col-12", "col-md-4", "mb-4")
+
     const newCard = createCard(data);
-    cardsContainer.appendChild(newCard);
+
+    cardColumn.appendChild(newCard);
+    
+    cardsContainer.appendChild(cardColumn);
 });

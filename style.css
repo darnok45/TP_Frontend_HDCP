@@ -18,10 +18,6 @@ nav{
 nav img{
   width: 60px;
 }
-.titulo{
-  font-size: 18px;
-}
-
 
 .theme-checkbox {
   --toggle-size: 15px;
@@ -104,6 +100,9 @@ footer {
   .navbar .btn {
     width: 100%;
   }
+  .titulo{
+    font-size: 18px;
+  }
 
   /* Footer más compacto en pantallas pequeñas */
   footer {
@@ -155,3 +154,4 @@ img{
   width: 100%;
   height: 100%;
 }
+
