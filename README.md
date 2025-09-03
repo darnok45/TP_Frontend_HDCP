@@ -40,31 +40,40 @@ El proyecto utiliza las siguientes librerias externas:
 
 ## 💻 Funcionalidad de JavaScript (Calculos y toma de datos)
 
-- #### Calculos de vehiculo:
+### 🚗 Cálculos de vehículo
+```
 document.getElementById("btn_Vehiculo").addEventListener("click", () => {
     const selected = parseInt(document.querySelector('input[name="radioVehiculo"]:checked').value);
-	console.log("Vehiculo: ", selected);
-	respuestas.emisionVehiculo = selected * (1/valores.EM) * valores.FEn / 1000;
-	swiper.slideNext();
-});
+    console.log("Vehiculo: ", selected);
 
-- #### Calculos de colectivo:
-document.getElementById("btn_Colectivo").addEventListener("click", () => {
-    const selected = parseInt(document.querySelector('input[name="radioColectivo"]:checked').value);
-    console.log("Colectivo: ", selected);
-    respuestas.emisionColectivo = (selected * valores.AS * valores.R * (1/valores.EMc) * valores.FEg) / (1000 * valores.C);
+    respuestas.emisionVehiculo = selected * (1 / valores.EM) * valores.FEn / 1000;
+
     swiper.slideNext();
 });
+```
+
+- #### Calculos de colectivo:
+```
+document.getElementById("btn_Colectivo").addEventListener("click", () => {
+	const selected = parseInt(document.querySelector('input[name="radioColectivo"]:checked').value);
+ 	console.log("Colectivo: ", selected);
+  	respuestas.emisionColectivo = (selected * valores.AS * valores.R * (1/valores.EMc) * valores.FEg) / (1000 * valores.C);
+   	swiper.slideNext();
+});
+```
 
 - #### Calculos de alimentación:
+```
 document.getElementById("btn_Alimentacion").addEventListener("click", () => {
     const selected = parseInt(document.querySelector('input[name="radioAlimentos"]:checked').value);
     console.log("Alimentos: ", selected);
     respuestas.emisionAlimentos = (selected * valores.BD / 100) * valores.FEAA * valores.Ad / 1000000;
     swiper.slideNext();
 });
+```
 
 - #### Calculos de electricidad:
+```
 btn_Electricidad.addEventListener("click", () => {
     const selected = parseInt(inp_Electricidad.value) || 3300;
     if(selected <= 0){
@@ -75,8 +84,10 @@ btn_Electricidad.addEventListener("click", () => {
 	swiper.slideNext();
     }
 });
+```
 
 - #### Calculos de gas y resultado:
+```
 btn_Gas.addEventListener("click", () => {
     const selected = parseInt(inp_Gas.value) || 1075;
     console.log("Gas: ", selected);
@@ -101,6 +112,7 @@ btn_Gas.addEventListener("click", () => {
 	swiper.slideNext();
     }
 });
+```
 
 ---
 
