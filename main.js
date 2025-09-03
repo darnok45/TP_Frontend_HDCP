@@ -203,7 +203,6 @@ function createCard(data) {
         "bg-white",
         "dark:bg-gray-800",
         "text-gray-800",
-        "dark:text-gray-100",
         "rounded-lg",
         "shadow-lg",
         "p-6",
@@ -211,7 +210,8 @@ function createCard(data) {
         "flex-col",
         "hover:shadow-xl",
         "transition-shadow",
-        "duration-300"
+        "duration-300",
+        "h-full"
     );
 
     const cardContent = 
@@ -227,7 +227,7 @@ function createCard(data) {
 cardData.forEach(data => {
     const cardColumn = document.createElement("div");
     
-    cardColumn.classList.add("col-12", "col-md-4", "mb-4")
+    cardColumn.classList.add("w-full")
 
     const newCard = createCard(data);
 
