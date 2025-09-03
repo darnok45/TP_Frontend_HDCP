@@ -43,20 +43,16 @@ El proyecto utiliza las siguientes librerias externas:
 - #### Calculos de vehiculo:
 document.getElementById("btn_Vehiculo").addEventListener("click", () => {
     const selected = parseInt(document.querySelector('input[name="radioVehiculo"]:checked').value);
-    console.log("Vehiculo: ", selected);
-
-    respuestas.emisionVehiculo = selected * (1/valores.EM) * valores.FEn / 1000;
-
-    swiper.slideNext();
+	console.log("Vehiculo: ", selected);
+	respuestas.emisionVehiculo = selected * (1/valores.EM) * valores.FEn / 1000;
+	swiper.slideNext();
 });
 
 - #### Calculos de colectivo:
 document.getElementById("btn_Colectivo").addEventListener("click", () => {
     const selected = parseInt(document.querySelector('input[name="radioColectivo"]:checked').value);
     console.log("Colectivo: ", selected);
-
     respuestas.emisionColectivo = (selected * valores.AS * valores.R * (1/valores.EMc) * valores.FEg) / (1000 * valores.C);
-
     swiper.slideNext();
 });
 
@@ -64,15 +60,13 @@ document.getElementById("btn_Colectivo").addEventListener("click", () => {
 document.getElementById("btn_Alimentacion").addEventListener("click", () => {
     const selected = parseInt(document.querySelector('input[name="radioAlimentos"]:checked').value);
     console.log("Alimentos: ", selected);
-
     respuestas.emisionAlimentos = (selected * valores.BD / 100) * valores.FEAA * valores.Ad / 1000000;
-
     swiper.slideNext();
 });
+
 - #### Calculos de electricidad:
 btn_Electricidad.addEventListener("click", () => {
     const selected = parseInt(inp_Electricidad.value) || 3300;
-
     if(selected <= 0){
 	alert("El valor debe ser mayor a 0");
     } else {
@@ -81,20 +75,17 @@ btn_Electricidad.addEventListener("click", () => {
 	swiper.slideNext();
     }
 });
+
 - #### Calculos de gas y resultado:
 btn_Gas.addEventListener("click", () => {
     const selected = parseInt(inp_Gas.value) || 1075;
     console.log("Gas: ", selected);
-
     if(selected<=0){
     alert("El valor debe ser mayor a 0")
     }else{
 	respuestas.emisionGas = selected \* valores.FEgn/1000;
-
     const calculoFinal = (respuestas.emisionVehiculo || 0) + (respuestas.emisionColectivo || 0) + respuestas.emisionAlimentos + respuestas.emisionElectricidad + respuestas.emisionGas;
-
-     console.log(calculoFinal);
-
+    console.log(calculoFinal);
 	let msg;
 	if(calculoFinal < 4){
 	msg = "Tu emisión de huella de carbono es baja. ¡Sigue asi! ";
@@ -103,13 +94,10 @@ btn_Gas.addEventListener("click", () => {
 	}else{
 	msg = "Tu emisión de huella de carbono es alta. ¡Podemos mejorar!";
 	}
-
 	const resultado_header = document.getElementById("resultado_header");
 	const resultado_numero = document.getElementById("resultado-numero");
-
 	resultado_header.textContent = msg;
 	resultado_numero.textContent = calculoFinal.toFixed(2)+"CO₂/Año";
-
 	swiper.slideNext();
     }
 });
